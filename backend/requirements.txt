@@ -1,0 +1,13 @@
+flask==2.0.1
+scikit-learn==0.24.2
+pandas==1.2.4
+numpy==1.20.3
+scipy==1.6.3
+tensorflow==2.5.0  # or pytorch
+scapy==2.4.5
+joblib==1.0.1
+pytest==6.2.4
+netifaces==0.11.0
+
+
+
