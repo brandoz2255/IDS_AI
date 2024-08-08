@@ -19,15 +19,13 @@ This module will be responsible for gathering network data that needs to be anal
 
   """
 
-
-
 class DataCollectionModule:
-    def __init__(self, interface='eth0'):
+    def __init__(self, interface='wlp4s0'):
         self.interface = interface
         self.devices = []
 
     def list_interfaces(self):
-        """ WILL LIST ALL AVAILBLE NETWORK INTERFACES """
+        """WILL LIST ALL AVAILABLE NETWORK INTERFACES"""
         interfaces = netifaces.interfaces()
         print("Available network interfaces:")
         for iface in interfaces:
@@ -75,5 +73,9 @@ class DataCollectionModule:
         scan_thread.join()
 
 if __name__ == "__main__":
-    data_collector = DataCollectionModule(interface='eth0')
+    data_collector = DataCollectionModule(interface='wlp4s0')
     data_collector.list_interfaces()
+    
+
+    # Now, run the data collection tasks
+    data_collector.run()
