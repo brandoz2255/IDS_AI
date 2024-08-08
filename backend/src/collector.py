@@ -20,9 +20,11 @@ This module will be responsible for gathering network data that needs to be anal
   """
 
 class DataCollectionModule:
+
     def __init__(self, interface='wlp4s0'):
         self.interface = interface
         self.devices = []
+
 
     def list_interfaces(self):
         """WILL LIST ALL AVAILABLE NETWORK INTERFACES"""
@@ -31,12 +33,14 @@ class DataCollectionModule:
         for iface in interfaces:
             print(iface)
 
+
     def capture_packets(self, packet_count=10):
         """Capture live network traffic."""
         print(f"Capturing {packet_count} packets on {self.interface}...")
         packets = scapy.sniff(iface=self.interface, count=packet_count)
         for packet in packets:
             print(packet.summary())
+
 
     def scan_network(self, ip_range):
         """Scan devices connected to a network."""
@@ -45,6 +49,7 @@ class DataCollectionModule:
         broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
         arp_request_broadcast = broadcast/arp_request
         answered_list = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0]
+
         
         devices = []
         for element in answered_list:
@@ -52,6 +57,7 @@ class DataCollectionModule:
             devices.append(device_info)
             print(f"IP: {device_info['ip']}, MAC: {device_info['mac']}")
         self.devices = devices
+
 
     def process_logs(self, log_file):
         """Process network logs."""
@@ -61,13 +67,16 @@ class DataCollectionModule:
             for log in logs:
                 print(log.strip())
 
+
     def run(self):
         """Run the data collection module."""
         capture_thread = threading.Thread(target=self.capture_packets)
         capture_thread.start()
 
+
         scan_thread = threading.Thread(target=self.scan_network, args=("192.168.1.0/24",))
         scan_thread.start()
+
 
         capture_thread.join()
         scan_thread.join()
@@ -75,6 +84,7 @@ class DataCollectionModule:
 if __name__ == "__main__":
     data_collector = DataCollectionModule(interface='wlp4s0')
     data_collector.list_interfaces()
+    
     
 
     # Now, run the data collection tasks
