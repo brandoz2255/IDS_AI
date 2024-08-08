@@ -1,0 +1,23 @@
+# Python virtual environment
+venv/
+
+# Python byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Docker related
+Dockerfile.*
+docker-compose*.yml
+
+# Node modules for the frontend
+frontend/node_modules/
+
+# Environment variables
+.env
+
+# IDE specific files
+.idea/
+*.swp
+*.swo
+.vscode/
+
