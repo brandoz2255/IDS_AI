@@ -1,9 +1,0 @@
-source venv/bin/activate
-
-This would activate your python evirement
-
-This would start it 
-
-python -m venv venv
-
-In case you want to use a python envirement ;)
