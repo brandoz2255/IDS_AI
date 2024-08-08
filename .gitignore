@@ -6,8 +6,6 @@ __pycache__/
 *.py[cod]
 
 # Docker related
-Dockerfile.*
-docker-compose*.yml
 
 # Node modules for the frontend
 frontend/node_modules/
