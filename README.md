@@ -17,7 +17,7 @@ What fascinated me the most was the `IDS` system that most industries have. I ju
 - pytest
 - Docker
 
-These libraries in Python are going to be used for the back end. Where the Front end is going to be in React.js. Also Docker is going to be used for easy mobility on all systems for this Web App.
+These libraries in Python are going to be used for the back end as well as Docker. Where the Front end is going to be in React.js. Also Docker is going to be used for easy mobility on all systems for this Web App.
 
 #### Phase one
 
