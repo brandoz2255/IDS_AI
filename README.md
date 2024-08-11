@@ -1,34 +1,72 @@
-# Starting 
-Will work on **Phase one** which is the backend then for **Phase Two** I will being working with React!!
+# Project Overview
 
-## What this project is about!
+## Introduction
 
-Essentially My idea for this application started when I wanted to make a GUI for `NMAP` using React but then I moved onto studying for my Security+. 
+This project began as an initiative to create a GUI for `NMAP` using React. However, as I prepared for my Security+ certification, my focus shifted. I became deeply intrigued by `IDS` (Intrusion Detection Systems) and their mechanisms. My goal is to **explore**, **understand**, and **innovate** how `IDS` systems function, especially by incorporating `AI` capabilities.
 
-What fascinated me the most was the `IDS` system that most industries have. I just want to understand how `IDS` systems work under the hood and I want to add some `AI` capabilities to it.
+## Technology Stack
 
+To achieve this, I will **leverage** the following tools and libraries for the backend:
 
-- Flask 
+- **Flask**: for building a scalable and efficient API.
+- **Pandas**: for data manipulation and analysis.
+- **Numpy**: for numerical operations.
+- **SCIpy**: for advanced scientific computing.
+- **TensorFlow**: to integrate machine learning models.
+- **Scapy**: for packet manipulation and network tasks.
+- **pytest**: to ensure robust and reliable testing.
+- **Docker**: for creating containerized, platform-independent applications.
+
+The frontend will be developed using **React.js**, and **Docker** will also be employed to ensure easy deployment and mobility across different systems.
+
+## Phase One: Backend Development
+
+### Objectives
+
+In Phase One, I will **design**, **develop**, and **implement** the backend infrastructure for the tool. This phase will focus on:
+
+- **Incorporating** Nmap capabilities, while more closely **emulating** Wireshark’s functionality.
+- **Integrating** machine learning assistance to enhance packet analysis and intrusion detection.
+
+### Technologies
+
+- Flask
 - Pandas
 - Numpy
 - SCIpy
-- tensorFlow
+- TensorFlow
 - Scapy
 - pytest
 - Docker
 
-These libraries in Python are going to be used for the back end as well as Docker. Where the Front end is going to be in React.js. Also Docker is going to be used for easy mobility on all systems for this Web App.
+## Phase Two: Frontend Development
 
-#### Phase one
+### Objectives
 
-Phase One will consist of only the Backend of this tool Where I am to have some Nmap capabilities but this will be more closely resembling Wireshark with ML assistance. 
+In Phase Two, I will **build** and **optimize** the frontend of the application using React.js. The goal is to:
 
-#### Phase Two 
+- **Create** a visually appealing and user-friendly GUI.
+- **Establish** seamless communication between the frontend and backend via Flask API.
+- **Ensure** fluid interaction and real-time data visualization.
 
-Phase Two will consist of the Frontend the React Application that will communicate with the Backend via Flask API to create a nice fluid eye candy GUI.
+### Technology
 
-- Web App for now once I get all the kinks settled and everything ready once that is done move onto Phase Three
+- React.js
 
-#### Phase Three
+## Phase Three: Desktop Application Integration
 
-Phase Three will consist of Integrating Electron so that it can use the React Application as a fully fledged Desktop Application. 
+### Objectives
+
+Phase Three will involve **transforming** the web application into a full-fledged desktop application. This will be done by:
+
+- **Integrating** Electron to package the React application.
+- **Ensuring** that the desktop application **retains** the responsiveness and features of the web version.
+
+## Future Directions
+
+Once the primary phases are complete and the core functionalities are **refined**, I plan to **explore** further enhancements and potential deployments in real-world scenarios.
+
+---
+
+This project is designed to **equip** me with a deeper understanding of IDS systems and **demonstrate** the potential of AI in enhancing cybersecurity tools. I am excited to **embark** on this journey and **bring** my vision to life.
+
