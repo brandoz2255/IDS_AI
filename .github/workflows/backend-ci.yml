@@ -27,9 +27,9 @@ jobs:
 
     # Build Docker image
     - name: Build Docker image
-      run: docker build -t Dulc3/PyDS:latest .
+      run: docker build -t Dulc3/pyds:latest .
 
     # Run pytest for testing using the built Docker image
     - name: Run tests
-      run: docker run --rm Dulc3/PyDS:latest pytest
+      run: docker run --rm Dulc3/pyds:latest pytest
 
