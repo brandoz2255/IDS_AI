@@ -8,6 +8,7 @@ Front end coming sooon
 
  """
 
+
 import os
 import random
 import time
@@ -17,6 +18,8 @@ from rich.panel import Panel
 from processor import DataProcessingModule, DataCollectionModule
 import threading
 import sys
+
+
 
 class TUI:
     def __init__(self):
@@ -29,11 +32,8 @@ class TUI:
 
 
 
-
     def display_mac_addresses(self):
-
         """Displays the MAC address of each device on the network."""
-
         self.console.log("Scanning network for devices...")
         self.data_collector.scan_network("192.168.1.0/24")  # Scan the network first
         self.console.log("Displaying MAC addresses...")
@@ -41,11 +41,10 @@ class TUI:
 
 
 
-
     def start_packet_capture(self):
 
         """Start capturing packets."""
-
+        
         if self.capture_thread and self.capture_thread.is_alive():
             self.console.log("[bold red]Packet capture is already running![/bold red]")
         else:
@@ -94,7 +93,7 @@ class TUI:
 
         try:
             input()
-            self.stop_event.set()d
+            self.stop_event.set()
             if self.capture_thread and self.capture_thread.is_alive():
                 self.console.log("Stopping packet capture...")
                 self.capture_thread.join()
@@ -106,39 +105,40 @@ class TUI:
             self.console.log("Process interrupted by user.")
 
 
+
     def update_layout(self):
-            
-            """Updates the TUI layout."""
 
-            layout = Layout()
-            layout.split_column(
-                Layout(name="header", size=3),
-                Layout(name="main"),
-                Layout(name="footer", size=3)
+        """Updates the TUI layout."""
+
+        layout = Layout()
+        layout.split_column(
+            Layout(name="header", size=3),
+            Layout(name="main"),
+            Layout(name="footer", size=3)
+        )
+
+
+
+        layout["header"].update(Panel("[bold cyan]Data Processing Module TUI[/bold cyan]"))
+        layout["footer"].update(Panel("[bold green]Press 'q' to quit or 'g' for something special...[/bold green]"))
+
+        layout["main"].update(
+            Panel(
+                "[1] Capture Packets\n"
+                "[2] Display MAC Addresses\n"
+                "[3] Continuous Watch\n"
+                "[4](g) Does something special....\n"
+                "[5](q) Quit",
+                title="Main Menu"
             )
+        )
 
-            layout["header"].update(Panel("[bold cyan]Data Processing Module TUI[/bold cyan]"))
-            layout["footer"].update(Panel("[bold green]Press 'q' to quit or 'g' for something special...[/bold green]"))
-
-            layout["main"].update(
-                Panel(
-                    "[1] Capture Packets\n"
-                    "[2] Display MAC Addresses\n"
-                    "[3] Continuous Watch\n"
-                    "[g] Does something special....\n"
-                    "[q] Quit",
-                    title="Main Menu"
-                )
-            )
-
-            self.console.print(layout)
+        self.console.print(layout)
 
 
 
     def stop_threads(self):
-
         """Stop all running threads."""
-
         if self.capture_thread and self.capture_thread.is_alive():
             self.console.log("Stopping packet capture...")
             self.stop_event.set()
@@ -153,7 +153,9 @@ class TUI:
 
     def snake_game(self):
 
+
         """A simple snake game for old times sake...."""
+
 
         self.console.clear()
         width, height = 30, 20
@@ -163,8 +165,9 @@ class TUI:
         score = 0
 
 
+
         def print_game_board():
-            os.system('cls' if os.name == 'nt' else 'clear')
+            self.console.clear()
             for y in range(height):
                 for x in range(width):
                     if (x, y) in snake:
@@ -208,10 +211,9 @@ class TUI:
                 head in snake[1:]):
                 break
 
-            if self.console.input("Press 'w', 'a', 's', 'd' to move: ").strip().lower() in ['w', 'a', 's', 'd']:
-                change_direction(self.console.input("Press 'w', 'a', 's', 'd' to move: ").strip().lower())
-
-
+            user_input = self.console.input("Press 'w', 'a', 's', 'd' to move: ").strip().lower()
+            if user_input in ['w', 'a', 's', 'd']:
+                change_direction(user_input)
 
         self.console.log(f"Game Over! Your final score was {score}. Press Enter to return to the main menu.")
         input()
